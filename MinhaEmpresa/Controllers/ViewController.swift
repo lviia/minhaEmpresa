@@ -16,46 +16,58 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configTableView()
-        
-        title = "Minha Empresa"
-        
-        // criando o button de cadastro
-        button.setTitle("+", for: .normal)
-        button.setTitleColor(.white, for: .normal)
-        view.addSubview(button)
-        button.backgroundColor = .orange
-        button.layer.cornerRadius = 30
-        button.frame = CGRect(x: 300, y: 750, width: 60, height: 60)
-        button.addTarget(self, action: #selector(didTapButton), for: .touchUpInside)
+        buttonRegister()
+        navBar()
     }
     
     func configTableView() {
         namesTableView.dataSource = self
     }
     
-    // button de cadastro
-    @objc private func didTapButton() {
-        let registerVC = registerViewController()
-        let navVC = UINavigationController(rootViewController: registerVC)
-        navVC.modalPresentationStyle = .fullScreen
-        present(navVC, animated: true)
+    func navBar() {
+        title = "Minha Empresa"
+        navigationController?.navigationBar.backgroundColor = .orange
+        let textAttributes = [NSAttributedString.Key.foregroundColor:UIColor.white]
+        navigationController?.navigationBar.titleTextAttributes = textAttributes
+    }
+
+    // MARK: - Button
+    
+    func buttonRegister() {
+        button.setTitle("+", for: .normal)
+        button.setTitleColor(.white, for: .normal)
+        view.addSubview(button)
+        button.backgroundColor = .orange
+        button.layer.cornerRadius = 30
+        button.addTarget(self, action: #selector(didTapButton), for: .touchUpInside)
+        
+        // aumentando a fonte
+        let label = self.button.titleLabel
+        label?.minimumScaleFactor = 0.01
+        label?.adjustsFontSizeToFitWidth = true
+        label?.font = UIFont.systemFont(ofSize: 30)
+        
+        // constraints
+        button.translatesAutoresizingMaskIntoConstraints = false
+        
+        button.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -15).isActive = true
+        button.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -15).isActive = true
+        button.widthAnchor.constraint(equalToConstant: 60).isActive = true
+        button.heightAnchor.constraint(equalToConstant: 60).isActive = true
     }
     
-    // segunda view controller
-    class registerViewController: UIViewController {
-        override func viewDidLoad() {
-            super.viewDidLoad()
-            view.backgroundColor = .white
-            title = "Cadastro"
-            
-            navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Fechar", style: .plain, target: self, action: #selector(closeButton))
-        }
-        // button p fechar a register view
-        @objc private func closeButton() {
-            dismiss(animated: true, completion: nil)
-        }
+    // chamando a VC de cadastro
+    @objc private func didTapButton() {
+        let registerVC = RegisterViewController()
+        // let navVC = UINavigationController(rootViewController: registerVC)
+        // navVC.modalPresentationStyle = .fullScreen
+        // present(registerVC, animated: true)
+        self.navigationController?.modalPresentationStyle = .fullScreen
+        self.navigationController?.pushViewController(registerVC, animated: true)
     }
 }
+
+// MARK: - Table view
 
 // configurando a table view
 extension ViewController: UITableViewDataSource {
