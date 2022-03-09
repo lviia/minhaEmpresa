@@ -64,6 +64,7 @@ class ViewController: UIViewController {
         // present(registerVC, animated: true)
         self.navigationController?.modalPresentationStyle = .fullScreen
         self.navigationController?.pushViewController(registerVC, animated: true)
+        
     }
 }
 

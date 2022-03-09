@@ -15,6 +15,15 @@ class RegisterViewController: UIViewController {
         title = "Cadastro"
         
         self.navigationController?.navigationBar.tintColor = UIColor.white
-        navigationItem.backBarButtonItem?.title = ""
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        if #available(iOS 11.0, *) {
+            navigationItem.backButtonTitle = "Voltar"
+        } else {
+            navigationItem.backBarButtonItem?.title = "Voltar"
+        }
     }
 }
