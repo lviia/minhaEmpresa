@@ -30,7 +30,7 @@ class ViewController: UIViewController {
         let textAttributes = [NSAttributedString.Key.foregroundColor:UIColor.white]
         navigationController?.navigationBar.titleTextAttributes = textAttributes
     }
-
+    
     // MARK: - Button
     
     func buttonRegister() {
@@ -64,6 +64,12 @@ class ViewController: UIViewController {
         // present(registerVC, animated: true)
         self.navigationController?.modalPresentationStyle = .fullScreen
         self.navigationController?.pushViewController(registerVC, animated: true)
+        
+        if #available(iOS 11.0, *) {
+            navigationItem.backButtonTitle = "Voltar"
+        } else {
+            navigationItem.backBarButtonItem?.title = "Voltar"
+        }
         
     }
 }
