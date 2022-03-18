@@ -10,6 +10,7 @@ import UIKit
 class ViewController: UIViewController {
     
     @IBOutlet weak var namesTableView: UITableView!
+    @IBOutlet var mediaSlider: UISlider!
     
     let button = UIButton()
     
@@ -23,6 +24,8 @@ class ViewController: UIViewController {
     func configTableView() {
         namesTableView.dataSource = self
     }
+    
+    // MARK: - Navbar
     
     func navBar() {
         title = "Minha Empresa"
@@ -70,13 +73,11 @@ class ViewController: UIViewController {
         } else {
             navigationItem.backBarButtonItem?.title = "Voltar"
         }
-        
     }
 }
 
 // MARK: - Table view
 
-// configurando a table view
 extension ViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 10

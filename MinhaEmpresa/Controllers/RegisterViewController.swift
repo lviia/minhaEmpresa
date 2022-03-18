@@ -9,11 +9,10 @@ import UIKit
 
 class RegisterViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
     
-    @IBOutlet weak var pickerViewRegister: UIPickerView!
+    @IBOutlet var pickerViewRegister: UIPickerView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         configPickerView()
         navbarRegister()
     }
@@ -25,23 +24,23 @@ class RegisterViewController: UIViewController, UIPickerViewDataSource, UIPicker
     }
     
     // picker view
-    let arrayDados = ["Comercial", "Desenvolvimento", "Suporte Técnico", "Administrativo"]
-    
+    let arrayData = ["Comercial", "Desenvolvimento", "Suporte Técnico", "Administrativo"]
+
     func configPickerView() {
         pickerViewRegister.delegate = self
         pickerViewRegister.dataSource = self
     }
-    
+
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
-    
+
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return arrayDados.count
+        return arrayData.count
     }
-    
+
     internal func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String?
     {
-        return self.arrayDados[row] as NSString as String
+        return self.arrayData[row] as NSString as String
     }
 }
