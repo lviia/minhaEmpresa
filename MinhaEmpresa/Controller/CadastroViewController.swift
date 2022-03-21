@@ -7,9 +7,13 @@
 
 import UIKit
 
-class RegisterViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
+class CadastroViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
     
     @IBOutlet var pickerViewRegister: UIPickerView!
+    @IBOutlet weak var cadastroSlider: UISlider!
+    @IBAction func sliderCadastroAction(_ sender: UISlider) {
+        print(sender.value)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()

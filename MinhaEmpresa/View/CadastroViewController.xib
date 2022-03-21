@@ -8,9 +8,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TesteViewController" customModule="MinhaEmpresa" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CadastroViewController" customModule="MinhaEmpresa" customModuleProvider="target">
             <connections>
-                <outlet property="pickerViewRegister" destination="fXi-ga-sTq" id="qD9-6j-ROd"/>
+                <outlet property="cadastroSlider" destination="CLW-i7-n48" id="c7V-Em-gn2"/>
+                <outlet property="pickerViewRegister" destination="fXi-ga-sTq" id="rPE-gK-gaD"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -102,9 +103,12 @@
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="CLW-i7-n48">
+                                        <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1.5" minValue="0.0" maxValue="5" translatesAutoresizingMaskIntoConstraints="NO" id="CLW-i7-n48">
                                             <rect key="frame" x="28" y="25.5" width="338" height="150"/>
                                             <color key="tintColor" red="0.93731445069999997" green="0.5291262269" blue="0.19986191389999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            <connections>
+                                                <action selector="sliderCadastroAction:" destination="-1" eventType="valueChanged" id="Qp2-Hh-K3R"/>
+                                            </connections>
                                         </slider>
                                     </subviews>
                                     <constraints>

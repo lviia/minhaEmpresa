@@ -10,7 +10,6 @@ import UIKit
 class ViewController: UIViewController {
     
     @IBOutlet weak var namesTableView: UITableView!
-    @IBOutlet var mediaSlider: UISlider!
     
     let button = UIButton()
     
@@ -61,7 +60,7 @@ class ViewController: UIViewController {
     
     // chamando a VC de cadastro
     @objc private func didTapButton() {
-        let registerVC = RegisterViewController()
+        let registerVC = CadastroViewController()
         // let navVC = UINavigationController(rootViewController: registerVC)
         // navVC.modalPresentationStyle = .fullScreen
         // present(registerVC, animated: true)

@@ -7,16 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8D848D5B27E8EF9800718569 /* Funcionario.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D848D5A27E8EF9800718569 /* Funcionario.swift */; };
 		8DBD48D427A177540093302E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DBD48D327A177540093302E /* AppDelegate.swift */; };
 		8DBD48DD27A177550093302E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8DBD48DC27A177550093302E /* Assets.xcassets */; };
 		8DBD48E027A177550093302E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8DBD48DE27A177550093302E /* LaunchScreen.storyboard */; };
 		8DD1D7BA27A1C5E700B305CB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DD1D7B827A1C5E700B305CB /* ViewController.swift */; };
 		8DD1D7BB27A1C5E700B305CB /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8DD1D7B927A1C5E700B305CB /* ViewController.xib */; };
-		8DDEFD2D27D247E500CA1956 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DDEFD2B27D247E500CA1956 /* RegisterViewController.swift */; };
-		8DDEFD2E27D247E500CA1956 /* RegisterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8DDEFD2C27D247E500CA1956 /* RegisterViewController.xib */; };
+		8DDEFD2D27D247E500CA1956 /* CadastroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DDEFD2B27D247E500CA1956 /* CadastroViewController.swift */; };
+		8DDEFD2E27D247E500CA1956 /* CadastroViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8DDEFD2C27D247E500CA1956 /* CadastroViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8D848D5A27E8EF9800718569 /* Funcionario.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Funcionario.swift; sourceTree = "<group>"; };
 		8DBD48D027A177540093302E /* MinhaEmpresa.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MinhaEmpresa.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8DBD48D327A177540093302E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8DBD48DC27A177550093302E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -24,8 +26,8 @@
 		8DBD48E127A177550093302E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8DD1D7B827A1C5E700B305CB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		8DD1D7B927A1C5E700B305CB /* ViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ViewController.xib; sourceTree = "<group>"; };
-		8DDEFD2B27D247E500CA1956 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
-		8DDEFD2C27D247E500CA1956 /* RegisterViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RegisterViewController.xib; sourceTree = "<group>"; };
+		8DDEFD2B27D247E500CA1956 /* CadastroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CadastroViewController.swift; sourceTree = "<group>"; };
+		8DDEFD2C27D247E500CA1956 /* CadastroViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CadastroViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -39,6 +41,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8D848D5927E8E84900718569 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				8D848D5A27E8EF9800718569 /* Funcionario.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		8DBD48C727A177540093302E = {
 			isa = PBXGroup;
 			children = (
@@ -59,8 +69,9 @@
 			isa = PBXGroup;
 			children = (
 				8DBD48D327A177540093302E /* AppDelegate.swift */,
-				8DBD48EB27A18E6C0093302E /* Views */,
-				8DF6B4EB27A9CA600019656A /* Controllers */,
+				8D848D5927E8E84900718569 /* Model */,
+				8DBD48EB27A18E6C0093302E /* View */,
+				8DF6B4EB27A9CA600019656A /* Controller */,
 				8DBD48E127A177550093302E /* Info.plist */,
 				8DBD48DC27A177550093302E /* Assets.xcassets */,
 				8DBD48DE27A177550093302E /* LaunchScreen.storyboard */,
@@ -68,22 +79,22 @@
 			path = MinhaEmpresa;
 			sourceTree = "<group>";
 		};
-		8DBD48EB27A18E6C0093302E /* Views */ = {
+		8DBD48EB27A18E6C0093302E /* View */ = {
 			isa = PBXGroup;
 			children = (
-				8DDEFD2C27D247E500CA1956 /* RegisterViewController.xib */,
 				8DD1D7B927A1C5E700B305CB /* ViewController.xib */,
+				8DDEFD2C27D247E500CA1956 /* CadastroViewController.xib */,
 			);
-			path = Views;
+			path = View;
 			sourceTree = "<group>";
 		};
-		8DF6B4EB27A9CA600019656A /* Controllers */ = {
+		8DF6B4EB27A9CA600019656A /* Controller */ = {
 			isa = PBXGroup;
 			children = (
 				8DD1D7B827A1C5E700B305CB /* ViewController.swift */,
-				8DDEFD2B27D247E500CA1956 /* RegisterViewController.swift */,
+				8DDEFD2B27D247E500CA1956 /* CadastroViewController.swift */,
 			);
-			path = Controllers;
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -144,7 +155,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8DDEFD2E27D247E500CA1956 /* RegisterViewController.xib in Resources */,
+				8DDEFD2E27D247E500CA1956 /* CadastroViewController.xib in Resources */,
 				8DBD48E027A177550093302E /* LaunchScreen.storyboard in Resources */,
 				8DD1D7BB27A1C5E700B305CB /* ViewController.xib in Resources */,
 				8DBD48DD27A177550093302E /* Assets.xcassets in Resources */,
@@ -160,7 +171,8 @@
 			files = (
 				8DD1D7BA27A1C5E700B305CB /* ViewController.swift in Sources */,
 				8DBD48D427A177540093302E /* AppDelegate.swift in Sources */,
-				8DDEFD2D27D247E500CA1956 /* RegisterViewController.swift in Sources */,
+				8D848D5B27E8EF9800718569 /* Funcionario.swift in Sources */,
+				8DDEFD2D27D247E500CA1956 /* CadastroViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
