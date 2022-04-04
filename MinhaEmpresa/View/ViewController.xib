@@ -11,7 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ViewController" customModule="MinhaEmpresa" customModuleProvider="target">
             <connections>
-                <outlet property="namesTableView" destination="Pc6-0t-UhU" id="6Vu-LG-DkM"/>
+                <outlet property="nomesTableView" destination="Pc6-0t-UhU" id="Pxk-qW-nWc"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -212,7 +212,7 @@
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="Gt3-6Z-u5a">
+                                <slider opaque="NO" contentMode="scaleToFill" restorationIdentifier="FirstVC" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="Gt3-6Z-u5a">
                                     <rect key="frame" x="178" y="10" width="198" height="21"/>
                                     <color key="minimumTrackTintColor" red="0.93731445069999997" green="0.5291262269" blue="0.19986191389999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </slider>

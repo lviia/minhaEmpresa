@@ -7,10 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		8D848D5B27E8EF9800718569 /* Funcionario.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D848D5A27E8EF9800718569 /* Funcionario.swift */; };
+		8D6242DF27F228B5002130D7 /* CoreDataFuncionario.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8D6242DD27F228B5002130D7 /* CoreDataFuncionario.xcdatamodeld */; };
 		8DBD48D427A177540093302E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DBD48D327A177540093302E /* AppDelegate.swift */; };
 		8DBD48DD27A177550093302E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8DBD48DC27A177550093302E /* Assets.xcassets */; };
 		8DBD48E027A177550093302E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8DBD48DE27A177550093302E /* LaunchScreen.storyboard */; };
+		8DC3C09C27F38B8800BD781E /* Funcionario+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DC3C09A27F38B8800BD781E /* Funcionario+CoreDataClass.swift */; };
+		8DC3C09D27F38B8800BD781E /* Funcionario+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DC3C09B27F38B8800BD781E /* Funcionario+CoreDataProperties.swift */; };
 		8DD1D7BA27A1C5E700B305CB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DD1D7B827A1C5E700B305CB /* ViewController.swift */; };
 		8DD1D7BB27A1C5E700B305CB /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8DD1D7B927A1C5E700B305CB /* ViewController.xib */; };
 		8DDEFD2D27D247E500CA1956 /* CadastroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DDEFD2B27D247E500CA1956 /* CadastroViewController.swift */; };
@@ -18,12 +20,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		8D848D5A27E8EF9800718569 /* Funcionario.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Funcionario.swift; sourceTree = "<group>"; };
+		8D6242DE27F228B5002130D7 /* CoreDataFuncionario.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreDataFuncionario.xcdatamodel; sourceTree = "<group>"; };
 		8DBD48D027A177540093302E /* MinhaEmpresa.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MinhaEmpresa.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8DBD48D327A177540093302E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8DBD48DC27A177550093302E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8DBD48DF27A177550093302E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8DBD48E127A177550093302E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8DC3C09A27F38B8800BD781E /* Funcionario+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Funcionario+CoreDataClass.swift"; sourceTree = "<group>"; };
+		8DC3C09B27F38B8800BD781E /* Funcionario+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Funcionario+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		8DD1D7B827A1C5E700B305CB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		8DD1D7B927A1C5E700B305CB /* ViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ViewController.xib; sourceTree = "<group>"; };
 		8DDEFD2B27D247E500CA1956 /* CadastroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CadastroViewController.swift; sourceTree = "<group>"; };
@@ -41,12 +45,12 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		8D848D5927E8E84900718569 /* Model */ = {
+		8D9F35CE27EBA26D0026EE6A /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
-				8D848D5A27E8EF9800718569 /* Funcionario.swift */,
+				8D6242DD27F228B5002130D7 /* CoreDataFuncionario.xcdatamodeld */,
 			);
-			path = Model;
+			path = CoreData;
 			sourceTree = "<group>";
 		};
 		8DBD48C727A177540093302E = {
@@ -69,9 +73,10 @@
 			isa = PBXGroup;
 			children = (
 				8DBD48D327A177540093302E /* AppDelegate.swift */,
-				8D848D5927E8E84900718569 /* Model */,
+				8DC3C09E27F3975800BD781E /* Model */,
 				8DBD48EB27A18E6C0093302E /* View */,
 				8DF6B4EB27A9CA600019656A /* Controller */,
+				8D9F35CE27EBA26D0026EE6A /* CoreData */,
 				8DBD48E127A177550093302E /* Info.plist */,
 				8DBD48DC27A177550093302E /* Assets.xcassets */,
 				8DBD48DE27A177550093302E /* LaunchScreen.storyboard */,
@@ -86,6 +91,15 @@
 				8DDEFD2C27D247E500CA1956 /* CadastroViewController.xib */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		8DC3C09E27F3975800BD781E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				8DC3C09A27F38B8800BD781E /* Funcionario+CoreDataClass.swift */,
+				8DC3C09B27F38B8800BD781E /* Funcionario+CoreDataProperties.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		8DF6B4EB27A9CA600019656A /* Controller */ = {
@@ -170,9 +184,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				8DD1D7BA27A1C5E700B305CB /* ViewController.swift in Sources */,
+				8DC3C09C27F38B8800BD781E /* Funcionario+CoreDataClass.swift in Sources */,
 				8DBD48D427A177540093302E /* AppDelegate.swift in Sources */,
-				8D848D5B27E8EF9800718569 /* Funcionario.swift in Sources */,
+				8D6242DF27F228B5002130D7 /* CoreDataFuncionario.xcdatamodeld in Sources */,
 				8DDEFD2D27D247E500CA1956 /* CadastroViewController.swift in Sources */,
+				8DC3C09D27F38B8800BD781E /* Funcionario+CoreDataProperties.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -382,6 +398,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		8D6242DD27F228B5002130D7 /* CoreDataFuncionario.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				8D6242DE27F228B5002130D7 /* CoreDataFuncionario.xcdatamodel */,
+			);
+			currentVersion = 8D6242DE27F228B5002130D7 /* CoreDataFuncionario.xcdatamodel */;
+			path = CoreDataFuncionario.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 8DBD48C827A177540093302E /* Project object */;
 }

@@ -6,13 +6,22 @@
 //
 
 import UIKit
+import CoreData
 
 class CadastroViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
     
-    @IBOutlet var pickerViewRegister: UIPickerView!
-    @IBOutlet weak var cadastroSlider: UISlider!
-    @IBAction func sliderCadastroAction(_ sender: UISlider) {
+    // MARK: - IBOutlet
+    @IBOutlet weak var nomeTextField: UITextField!
+    @IBOutlet weak var sobrenomeTextField: UITextField!
+    @IBOutlet weak var dataNascimentoDatePicker: UIDatePicker!
+    @IBOutlet var cargoPickerView: UIPickerView!
+    
+    // MARK: - IBAction
+    @IBAction func nivelExperienciaSlider(_ sender: UISlider) {
         print(sender.value)
+    }
+    @IBAction func salvarButton(_ sender: Any) {
+        self.navigationController?.popViewController(animated: true)
     }
     
     override func viewDidLoad() {
@@ -21,18 +30,19 @@ class CadastroViewController: UIViewController, UIPickerViewDataSource, UIPicker
         navbarRegister()
     }
     
+    // MARK: - Navbar
     func navbarRegister() {
         view.backgroundColor = .white
         title = "Cadastro"
         self.navigationController?.navigationBar.tintColor = UIColor.white
     }
-    
-    // picker view
-    let arrayData = ["Comercial", "Desenvolvimento", "Suporte Técnico", "Administrativo"]
+
+    // MARK: - Picker View
+    let arrayDados = ["Comercial", "Desenvolvimento", "Suporte Técnico", "Administrativo"]
 
     func configPickerView() {
-        pickerViewRegister.delegate = self
-        pickerViewRegister.dataSource = self
+        cargoPickerView.delegate = self
+        cargoPickerView.dataSource = self
     }
 
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
@@ -40,11 +50,11 @@ class CadastroViewController: UIViewController, UIPickerViewDataSource, UIPicker
     }
 
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return arrayData.count
+        return arrayDados.count
     }
 
     internal func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String?
     {
-        return self.arrayData[row] as NSString as String
+        return self.arrayDados[row] as NSString as String
     }
 }

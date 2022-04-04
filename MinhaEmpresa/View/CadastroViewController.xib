@@ -10,13 +10,15 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CadastroViewController" customModule="MinhaEmpresa" customModuleProvider="target">
             <connections>
-                <outlet property="cadastroSlider" destination="CLW-i7-n48" id="c7V-Em-gn2"/>
-                <outlet property="pickerViewRegister" destination="fXi-ga-sTq" id="rPE-gK-gaD"/>
+                <outlet property="cargoPickerView" destination="fXi-ga-sTq" id="USR-bC-Q2n"/>
+                <outlet property="dataNascimentoDatePicker" destination="t29-OK-UkH" id="Tla-sR-6fB"/>
+                <outlet property="nomeTextField" destination="5Ai-6f-1Sw" id="a2s-zg-qxa"/>
+                <outlet property="sobrenomeTextField" destination="a8x-s9-jGS" id="W2X-4d-8hm"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" restorationIdentifier="CadastroVC" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
@@ -103,11 +105,11 @@
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1.5" minValue="0.0" maxValue="5" translatesAutoresizingMaskIntoConstraints="NO" id="CLW-i7-n48">
+                                        <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="0.0" maxValue="5" translatesAutoresizingMaskIntoConstraints="NO" id="CLW-i7-n48">
                                             <rect key="frame" x="28" y="25.5" width="338" height="150"/>
                                             <color key="tintColor" red="0.93731445069999997" green="0.5291262269" blue="0.19986191389999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                             <connections>
-                                                <action selector="sliderCadastroAction:" destination="-1" eventType="valueChanged" id="Qp2-Hh-K3R"/>
+                                                <action selector="nivelExperienciaSlider:" destination="-1" eventType="valueChanged" id="eFp-OX-sN3"/>
                                             </connections>
                                         </slider>
                                     </subviews>
@@ -145,6 +147,9 @@
                             <buttonConfiguration key="configuration" style="filled" title="SALVAR">
                                 <color key="baseBackgroundColor" red="0.93731445069999997" green="0.5291262269" blue="0.19986191389999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </buttonConfiguration>
+                            <connections>
+                                <action selector="salvarButton:" destination="-1" eventType="touchUpInside" id="7Ce-hF-ZTU"/>
+                            </connections>
                         </button>
                     </subviews>
                     <constraints>
