@@ -8,6 +8,14 @@
 import UIKit
 import CoreData
 
+struct FuncionarioInput {
+    var cargo: String?
+    var dataNascimento: Date?
+    var nivelExperiencia: Float
+    var nome: String?
+    var sobrenome: String?
+}
+
 class CadastroViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
     
     // MARK: - IBOutlet
@@ -15,14 +23,27 @@ class CadastroViewController: UIViewController, UIPickerViewDataSource, UIPicker
     @IBOutlet weak var sobrenomeTextField: UITextField!
     @IBOutlet weak var dataNascimentoDatePicker: UIDatePicker!
     @IBOutlet var cargoPickerView: UIPickerView!
+    var cargoSelecionado: String? = nil
+    var nivelSelecionado: Float = 5.0
     
     // MARK: - IBAction
     @IBAction func nivelExperienciaSlider(_ sender: UISlider) {
-        print(sender.value)
+        nivelSelecionado = sender.value
     }
     @IBAction func salvarButton(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
+        let nome = nomeTextField.text
+        let sobrenome = sobrenomeTextField.text
+        let dataNascimento = dataNascimentoDatePicker.date
+        let cargo = cargoSelecionado
+        let nivelExperiencia = nivelSelecionado
+        
+        let funcionario = FuncionarioInput(cargo: cargo, dataNascimento: dataNascimento, nivelExperiencia: nivelExperiencia, nome: nome, sobrenome: sobrenome)
+        atualizarFuncionariosDelegate?.adicionar(funcionario: funcionario)
+        atualizarFuncionariosDelegate?.buscarFuncionario()
     }
+    
+    var atualizarFuncionariosDelegate: AtualizarFuncionariosDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -56,5 +77,9 @@ class CadastroViewController: UIViewController, UIPickerViewDataSource, UIPicker
     internal func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String?
     {
         return self.arrayDados[row] as NSString as String
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        cargoSelecionado = arrayDados[row]
     }
 }
