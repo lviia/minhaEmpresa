@@ -75,6 +75,9 @@
                                         <datePicker contentMode="scaleToFill" verticalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" style="compact" translatesAutoresizingMaskIntoConstraints="NO" id="t29-OK-UkH">
                                             <rect key="frame" x="0.0" y="25.5" width="394" height="149"/>
                                             <color key="tintColor" red="0.93731445069999997" green="0.5291262269" blue="0.19986191389999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            <date key="maximumDate" timeIntervalSinceReferenceDate="126180000">
+                                                <!--2004-12-31 10:00:00 +0000-->
+                                            </date>
                                         </datePicker>
                                     </subviews>
                                 </stackView>

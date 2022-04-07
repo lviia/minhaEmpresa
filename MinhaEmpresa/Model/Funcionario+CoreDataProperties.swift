@@ -16,11 +16,11 @@ extension Funcionario {
         return NSFetchRequest<Funcionario>(entityName: "Funcionario")
     }
 
-    @NSManaged public var cargo: String?
-    @NSManaged public var dataNascimento: Date?
+    @NSManaged public var cargo: String
+    @NSManaged public var dataNascimento: Date
     @NSManaged public var nivelExperiencia: Float
-    @NSManaged public var nome: String?
-    @NSManaged public var sobrenome: String?
+    @NSManaged public var nome: String
+    @NSManaged public var sobrenome: String
 
 }
 

@@ -27,7 +27,6 @@ class ViewController: UIViewController {
         configTableView()
         buttonNavController()
         navBar()
-        // pega os itens do core data
         buscarFuncionario()
     }
     
@@ -92,16 +91,38 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // retornando o número de funcionários
         return self.items?.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = nomesTableView.dequeueReusableCell(withIdentifier: "FuncionarioCell", for: indexPath) as! FuncionarioTableViewCell
-        // pegando funcionário do array e colocando a label
         let funcionario = self.items![indexPath.row]
-        cell.textLabel?.text = (funcionario.nome ?? "") + " " +  (funcionario.sobrenome ?? "")
+        cell.textLabel?.text = (funcionario.nome) + " " +  (funcionario.sobrenome)
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == UITableViewCell.EditingStyle.delete {
+            context.delete(self.items![indexPath.row])
+            
+            updateContext()
+            
+            func updateContext() {
+                do {
+                    try context.save()
+                    items?.removeAll()
+                    buscarFuncionario()
+                    nomesTableView.reloadData()
+                }
+                catch {
+                    print(error.localizedDescription)
+                }
+            }
+        }
     }
 }
 
@@ -123,13 +144,10 @@ extension ViewController: AtualizarFuncionariosDelegate {
         newRequest?.setValue(funcionario.dataNascimento, forKey: "dataNascimento")
         newRequest?.setValue(funcionario.cargo, forKey: "cargo")
         newRequest?.setValue(funcionario.nivelExperiencia, forKey: "nivelExperiencia")
-
         updateContext()
     }
     
     func buscarFuncionario() {
-        print("chamou")
-        // busca os dados do core data para mostrar na table view
         do {
             self.items = try context.fetch(Funcionario.fetchRequest())
             DispatchQueue.main.async {
