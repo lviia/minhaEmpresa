@@ -11,12 +11,13 @@ import CoreData
 struct FuncionarioInput {
     var cargo: String
     var dataNascimento: Date
+    var id: UUID
     var nivelExperiencia: Float
     var nome: String
     var sobrenome: String
 }
 
-class CadastroViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
+class CadastroViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate { 
     
     // MARK: - IBOutlet
     @IBOutlet weak var nomeTextField: UITextField!
@@ -25,6 +26,7 @@ class CadastroViewController: UIViewController, UIPickerViewDataSource, UIPicker
     @IBOutlet var cargoPickerView: UIPickerView!
     var cargoSelecionado: String = "Desenvolvimento"
     var nivelSelecionado: Float = 5.0
+    var id = UUID()
     
     // MARK: - IBAction
     @IBAction func nivelExperienciaSlider(_ sender: UISlider) {
@@ -36,7 +38,7 @@ class CadastroViewController: UIViewController, UIPickerViewDataSource, UIPicker
         let dataNascimento = dataNascimentoDatePicker.date
         let cargo = cargoSelecionado
         let nivelExperiencia = nivelSelecionado
-        let funcionario = FuncionarioInput(cargo: cargo, dataNascimento: dataNascimento, nivelExperiencia: nivelExperiencia, nome: nome!, sobrenome: sobrenome!)
+        let funcionario = FuncionarioInput(cargo: cargo, dataNascimento: dataNascimento, id: id, nivelExperiencia: nivelExperiencia, nome: nome!, sobrenome: sobrenome!)
         
         if nome == "" || sobrenome == "" {
             Alert(controller: self).mostra(mensagem: "Insira todos os campos corretamente")
@@ -61,23 +63,23 @@ class CadastroViewController: UIViewController, UIPickerViewDataSource, UIPicker
         title = "Cadastro"
         self.navigationController?.navigationBar.tintColor = UIColor.white
     }
-
+    
     // MARK: - Picker View
     let arrayDados = ["Comercial", "Desenvolvimento", "Suporte Técnico", "Administrativo"]
-
+    
     func configPickerView() {
         cargoPickerView.delegate = self
         cargoPickerView.dataSource = self
     }
-
+    
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
-
+    
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         return arrayDados.count
     }
-
+    
     internal func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String?
     {
         return self.arrayDados[row] as NSString as String

@@ -18,6 +18,7 @@ extension Funcionario {
 
     @NSManaged public var cargo: String
     @NSManaged public var dataNascimento: Date
+    @NSManaged public var id: UUID
     @NSManaged public var nivelExperiencia: Float
     @NSManaged public var nome: String
     @NSManaged public var sobrenome: String

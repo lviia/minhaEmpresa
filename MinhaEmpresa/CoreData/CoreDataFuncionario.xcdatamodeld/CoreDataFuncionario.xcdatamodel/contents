@@ -3,11 +3,12 @@
     <entity name="Funcionario" representedClassName="Funcionario" syncable="YES">
         <attribute name="cargo" optional="YES" attributeType="String"/>
         <attribute name="dataNascimento" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
         <attribute name="nivelExperiencia" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES"/>
         <attribute name="nome" optional="YES" attributeType="String"/>
         <attribute name="sobrenome" optional="YES" attributeType="String"/>
     </entity>
     <elements>
-        <element name="Funcionario" positionX="-63" positionY="-18" width="128" height="104"/>
+        <element name="Funcionario" positionX="-63" positionY="-18" width="128" height="119"/>
     </elements>
 </model>

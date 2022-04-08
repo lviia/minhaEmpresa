@@ -17,9 +17,8 @@ class ViewController: UIViewController {
     // MARK: - IBOutlet
     @IBOutlet weak var nomesTableView: UITableView!
     
-    // Reference managed object context
+    // Referencia managed object context
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-    
     var items:[Funcionario]?
     
     override func viewDidLoad() {
@@ -114,14 +113,15 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
             func updateContext() {
                 do {
                     try context.save()
-                    items?.removeAll()
-                    buscarFuncionario()
-                    nomesTableView.reloadData()
                 }
                 catch {
                     print(error.localizedDescription)
                 }
             }
+            
+            items?.removeAll()
+            buscarFuncionario()
+            nomesTableView.reloadData()
         }
     }
 }
@@ -144,6 +144,7 @@ extension ViewController: AtualizarFuncionariosDelegate {
         newRequest?.setValue(funcionario.dataNascimento, forKey: "dataNascimento")
         newRequest?.setValue(funcionario.cargo, forKey: "cargo")
         newRequest?.setValue(funcionario.nivelExperiencia, forKey: "nivelExperiencia")
+        newRequest?.setValue(funcionario.id, forKey: "id")
         updateContext()
     }
     
