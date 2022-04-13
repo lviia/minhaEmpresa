@@ -17,7 +17,9 @@ struct FuncionarioInput {
     var sobrenome: String
 }
 
-class CadastroViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate { 
+class CadastroViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
+    
+    var atualizarFuncionariosDelegate: AtualizarFuncionariosDelegate?
     
     // MARK: - IBOutlet
     @IBOutlet weak var nomeTextField: UITextField!
@@ -40,8 +42,18 @@ class CadastroViewController: UIViewController, UIPickerViewDataSource, UIPicker
         let nivelExperiencia = nivelSelecionado
         let funcionario = FuncionarioInput(cargo: cargo, dataNascimento: dataNascimento, id: id, nivelExperiencia: nivelExperiencia, nome: nome!, sobrenome: sobrenome!)
         
-        if nome == "" || sobrenome == "" {
-            Alert(controller: self).mostra(mensagem: "Insira todos os campos corretamente")
+        guard let nome = nome, nome.count != 0 else {
+            Alerta(controller: self).mostra(mensagem: "Insira o campo nome corretamente!")
+            return
+        }
+        
+        guard let sobrenome = sobrenome, sobrenome.count != 0 else {
+            Alerta(controller: self).mostra(mensagem: "Insira o campo sobrenome corretamente!")
+            return
+        }
+        
+        if validStr(strId: nome) == false || validStr(strId: sobrenome) == false {
+            Alerta(controller: self).mostra(mensagem: "Insira todos os campos corretamente!")
         } else {
             atualizarFuncionariosDelegate?.adicionar(funcionario: funcionario)
             atualizarFuncionariosDelegate?.buscarFuncionario()
@@ -49,7 +61,13 @@ class CadastroViewController: UIViewController, UIPickerViewDataSource, UIPicker
         }
     }
     
-    var atualizarFuncionariosDelegate: AtualizarFuncionariosDelegate?
+    // MARK: - Validando TextField
+    
+    func validStr(strId: String) -> Bool {
+        let regex = "^[A-Za-z]+$"
+        let strTeste = NSPredicate(format: "SELF MATCHES %@", regex)
+        return strTeste.evaluate(with: strId)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()

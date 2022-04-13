@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-class Alert {
+class Alerta {
     
     let controller: UIViewController
     

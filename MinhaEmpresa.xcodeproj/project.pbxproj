@@ -15,7 +15,7 @@
 		8DBD48E027A177550093302E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8DBD48DE27A177550093302E /* LaunchScreen.storyboard */; };
 		8DC3C09C27F38B8800BD781E /* Funcionario+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DC3C09A27F38B8800BD781E /* Funcionario+CoreDataClass.swift */; };
 		8DC3C09D27F38B8800BD781E /* Funcionario+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DC3C09B27F38B8800BD781E /* Funcionario+CoreDataProperties.swift */; };
-		8DCDA4CA27FF2F1900291B16 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DCDA4C927FF2F1900291B16 /* Alert.swift */; };
+		8DCDA4CA27FF2F1900291B16 /* Alerta.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DCDA4C927FF2F1900291B16 /* Alerta.swift */; };
 		8DD1D7BA27A1C5E700B305CB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DD1D7B827A1C5E700B305CB /* ViewController.swift */; };
 		8DD1D7BB27A1C5E700B305CB /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8DD1D7B927A1C5E700B305CB /* ViewController.xib */; };
 		8DDEFD2D27D247E500CA1956 /* CadastroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DDEFD2B27D247E500CA1956 /* CadastroViewController.swift */; };
@@ -33,7 +33,7 @@
 		8DBD48E127A177550093302E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8DC3C09A27F38B8800BD781E /* Funcionario+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Funcionario+CoreDataClass.swift"; sourceTree = "<group>"; };
 		8DC3C09B27F38B8800BD781E /* Funcionario+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Funcionario+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		8DCDA4C927FF2F1900291B16 /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
+		8DCDA4C927FF2F1900291B16 /* Alerta.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alerta.swift; sourceTree = "<group>"; };
 		8DD1D7B827A1C5E700B305CB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		8DD1D7B927A1C5E700B305CB /* ViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ViewController.xib; sourceTree = "<group>"; };
 		8DDEFD2B27D247E500CA1956 /* CadastroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CadastroViewController.swift; sourceTree = "<group>"; };
@@ -105,7 +105,7 @@
 			children = (
 				8DC3C09A27F38B8800BD781E /* Funcionario+CoreDataClass.swift */,
 				8DC3C09B27F38B8800BD781E /* Funcionario+CoreDataProperties.swift */,
-				8DCDA4C927FF2F1900291B16 /* Alert.swift */,
+				8DCDA4C927FF2F1900291B16 /* Alerta.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -199,7 +199,7 @@
 				8D6242DF27F228B5002130D7 /* CoreDataFuncionario.xcdatamodeld in Sources */,
 				8DDEFD2D27D247E500CA1956 /* CadastroViewController.swift in Sources */,
 				8DC3C09D27F38B8800BD781E /* Funcionario+CoreDataProperties.swift in Sources */,
-				8DCDA4CA27FF2F1900291B16 /* Alert.swift in Sources */,
+				8DCDA4CA27FF2F1900291B16 /* Alerta.swift in Sources */,
 				8D784BF127FE1FB700D9B93C /* FuncionarioTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
