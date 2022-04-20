@@ -27,7 +27,7 @@ class CadastroViewController: UIViewController, UIPickerViewDataSource, UIPicker
     @IBOutlet weak var dataNascimentoDatePicker: UIDatePicker!
     @IBOutlet var cargoPickerView: UIPickerView!
     var cargoSelecionado: String = "Desenvolvimento"
-    var nivelSelecionado: Float = 5.0
+    var nivelSelecionado: Float = 1.0
     var id = UUID()
     
     // MARK: - IBAction
@@ -35,40 +35,33 @@ class CadastroViewController: UIViewController, UIPickerViewDataSource, UIPicker
         nivelSelecionado = sender.value
     }
     @IBAction func salvarButton(_ sender: Any) {
-        let nome = nomeTextField.text
-        let sobrenome = sobrenomeTextField.text
+        let nome = nomeTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines)
+        let sobrenome = sobrenomeTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines)
         let dataNascimento = dataNascimentoDatePicker.date
         let cargo = cargoSelecionado
         let nivelExperiencia = nivelSelecionado
         let funcionario = FuncionarioInput(cargo: cargo, dataNascimento: dataNascimento, id: id, nivelExperiencia: nivelExperiencia, nome: nome!, sobrenome: sobrenome!)
-        
-        guard let nome = nome, nome.count != 0 else {
-            Alerta(controller: self).mostra(mensagem: "Insira o campo nome corretamente!")
-            return
-        }
-        
-        guard let sobrenome = sobrenome, sobrenome.count != 0 else {
-            Alerta(controller: self).mostra(mensagem: "Insira o campo sobrenome corretamente!")
-            return
-        }
-        
-        if validStr(strId: nome) == false || validStr(strId: sobrenome) == false {
-            Alerta(controller: self).mostra(mensagem: "Insira todos os campos corretamente!")
+
+        if validStr(strId: nome!) == false {
+            Alerta(controller: self).mostra(titulo: "Erro ao salvar nome!", mensagem: "Não insira números ou caracteres especiais")
+        } else if validStr(strId: sobrenome!) == false {
+            Alerta(controller: self).mostra(titulo: "Erro ao salvar sobrenome!", mensagem: "Não insira números ou caracteres especiais")
         } else {
             atualizarFuncionariosDelegate?.adicionar(funcionario: funcionario)
             atualizarFuncionariosDelegate?.buscarFuncionario()
+            atualizarFuncionariosDelegate?.totalColaboradores()
             self.navigationController?.popViewController(animated: true)
         }
     }
     
-    // MARK: - Validando TextField
-    
+    // MARK: - Validando
     func validStr(strId: String) -> Bool {
-        let regex = "^[A-Za-z]+$"
+        let regex = "[A-Za-z-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ' ']+$"
         let strTeste = NSPredicate(format: "SELF MATCHES %@", regex)
         return strTeste.evaluate(with: strId)
     }
     
+    // MARK: - ViewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
         configPickerView()
