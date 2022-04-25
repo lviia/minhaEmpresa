@@ -26,7 +26,7 @@ class CadastroViewController: UIViewController, UIPickerViewDataSource, UIPicker
     @IBOutlet weak var sobrenomeTextField: UITextField!
     @IBOutlet weak var dataNascimentoDatePicker: UIDatePicker!
     @IBOutlet var cargoPickerView: UIPickerView!
-    var cargoSelecionado: String = "Desenvolvimento"
+    var cargoSelecionado: String = "Comercial"
     var nivelSelecionado: Float = 1.0
     var id = UUID()
     
@@ -50,6 +50,8 @@ class CadastroViewController: UIViewController, UIPickerViewDataSource, UIPicker
             atualizarFuncionariosDelegate?.adicionar(funcionario: funcionario)
             atualizarFuncionariosDelegate?.buscarFuncionario()
             atualizarFuncionariosDelegate?.totalColaboradores()
+            atualizarFuncionariosDelegate?.nivelExperiencia()
+            atualizarFuncionariosDelegate?.cargos()
             self.navigationController?.popViewController(animated: true)
         }
     }
@@ -76,7 +78,7 @@ class CadastroViewController: UIViewController, UIPickerViewDataSource, UIPicker
     }
     
     // MARK: - Picker View
-    let arrayDados = ["Comercial", "Desenvolvimento", "Suporte Técnico", "Administrativo"]
+    let arrayCargos = ["Comercial", "Desenvolvimento", "Suporte Técnico", "Administrativo"]
     
     func configPickerView() {
         cargoPickerView.delegate = self
@@ -88,15 +90,15 @@ class CadastroViewController: UIViewController, UIPickerViewDataSource, UIPicker
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return arrayDados.count
+        return arrayCargos.count
     }
     
     internal func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String?
     {
-        return self.arrayDados[row] as NSString as String
+        return self.arrayCargos[row] as NSString as String
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        cargoSelecionado = arrayDados[row]
+        cargoSelecionado = arrayCargos[row]
     }
 }

@@ -12,7 +12,8 @@ protocol AtualizarFuncionariosDelegate {
     func buscarFuncionario()
     func adicionar(funcionario: FuncionarioInput)
     func totalColaboradores()
-    func media()
+    func nivelExperiencia()
+    func cargos()
 }
 
 class ViewController: UIViewController {
@@ -23,10 +24,11 @@ class ViewController: UIViewController {
     @IBOutlet weak var suporteLabel: UILabel!
     @IBOutlet weak var admLabel: UILabel!
     @IBOutlet weak var totalColaboradoresLabel: UILabel!
-    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    @IBOutlet weak var mediaSlider: UISlider!
     
+    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     var funcionarios:[Funcionario] = []
-
+    
     // MARK: - ViewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,6 +38,8 @@ class ViewController: UIViewController {
         navBar()
         buscarFuncionario()
         totalColaboradores()
+        nivelExperiencia()
+        cargos()
     }
     
     // MARK: - Navbar
@@ -52,7 +56,7 @@ class ViewController: UIViewController {
         self.navigationItem.rightBarButtonItem = addButton
         self.navigationItem.rightBarButtonItem?.tintColor = .white
     }
-
+    
     @objc private func didTapButton() {
         let registerVC = CadastroViewController()
         self.navigationController?.modalPresentationStyle = .fullScreen
@@ -106,6 +110,8 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
             funcionarios.removeAll()
             buscarFuncionario()
             totalColaboradores()
+            nivelExperiencia()
+            cargos()
             nomesTableView.reloadData()
         }
     }
@@ -150,8 +156,41 @@ extension ViewController: AtualizarFuncionariosDelegate {
         totalColaboradoresLabel.text = "\(funcionarios.count)"
     }
     
-    func media() {
-        <#code#>
+    func nivelExperiencia() {
+        var soma: Float = 0
+        for funcionario in funcionarios {
+            let nivelExp: Float = funcionario.nivelExperiencia
+            soma += nivelExp
+        }
+        mediaSlider.value = soma / Float(funcionarios.count)
+    }
+
+    func cargos() {
+        var somaC = 0
+        var somaD = 0
+        var somaS = 0
+        var somaA = 0
+        for funcionario in funcionarios {
+            switch funcionario.cargo {
+            case "Comercial": somaC += 1
+            case "Desenvolvimento": somaD += 1
+            case "Suporte Técnico": somaS += 1
+            case "Administrativo": somaA += 1
+            default:
+                break
+            }
+        }
+        comercialLabel.text = "\(somaC)"
+        desenvolvimentoLabel.text = "\(somaD)"
+        suporteLabel.text = "\(somaS)"
+        admLabel.text = "\(somaA)"
     }
 }
+
+//enum Cargos: String {
+//    case com = "Comercial"
+//    case dev = "Desenvolvimento"
+//    case sup = "Suporte Técnico"
+//    case adm = "Administrativo"
+//}
 

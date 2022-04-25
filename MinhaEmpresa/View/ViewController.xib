@@ -14,6 +14,7 @@
                 <outlet property="admLabel" destination="oLE-Zb-ymB" id="4Xc-LK-ttv"/>
                 <outlet property="comercialLabel" destination="Wzl-AD-FJD" id="pLQ-Jx-yW9"/>
                 <outlet property="desenvolvimentoLabel" destination="SkR-B0-h1R" id="5Ey-K6-V1u"/>
+                <outlet property="mediaSlider" destination="Gt3-6Z-u5a" id="bPz-mP-UWI"/>
                 <outlet property="nomesTableView" destination="Pc6-0t-UhU" id="Pxk-qW-nWc"/>
                 <outlet property="suporteLabel" destination="93u-Fw-tgN" id="CAY-eX-mlt"/>
                 <outlet property="totalColaboradoresLabel" destination="4Ks-nA-UEM" id="JY8-MC-Ew2"/>
@@ -217,7 +218,7 @@
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <slider opaque="NO" contentMode="scaleToFill" restorationIdentifier="FirstVC" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="0.0" maxValue="5" translatesAutoresizingMaskIntoConstraints="NO" id="Gt3-6Z-u5a">
+                                <slider opaque="NO" contentMode="scaleToFill" restorationIdentifier="FirstVC" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="5" translatesAutoresizingMaskIntoConstraints="NO" id="Gt3-6Z-u5a">
                                     <rect key="frame" x="165.5" y="10" width="210.5" height="21"/>
                                     <color key="minimumTrackTintColor" red="0.93731445069999997" green="0.5291262269" blue="0.19986191389999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </slider>
