@@ -26,6 +26,8 @@ class CadastroViewController: UIViewController, UIPickerViewDataSource, UIPicker
     @IBOutlet weak var sobrenomeTextField: UITextField!
     @IBOutlet weak var dataNascimentoDatePicker: UIDatePicker!
     @IBOutlet var cargoPickerView: UIPickerView!
+    @IBOutlet weak var nivelLabel: UILabel!
+    
     var cargoSelecionado: String = "Comercial"
     var nivelSelecionado: Float = 1.0
     var id = UUID()
@@ -33,7 +35,9 @@ class CadastroViewController: UIViewController, UIPickerViewDataSource, UIPicker
     // MARK: - IBAction
     @IBAction func nivelExperienciaSlider(_ sender: UISlider) {
         nivelSelecionado = sender.value
+        nivelLabel.text = "\(round(nivelSelecionado))"
     }
+    
     @IBAction func salvarButton(_ sender: Any) {
         let nome = nomeTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines)
         let sobrenome = sobrenomeTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines)
@@ -55,6 +59,7 @@ class CadastroViewController: UIViewController, UIPickerViewDataSource, UIPicker
             self.navigationController?.popViewController(animated: true)
         }
     }
+    
     
     // MARK: - Validando
     func validStr(strId: String) -> Bool {

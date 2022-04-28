@@ -14,6 +14,7 @@
                 <outlet property="admLabel" destination="oLE-Zb-ymB" id="4Xc-LK-ttv"/>
                 <outlet property="comercialLabel" destination="Wzl-AD-FJD" id="pLQ-Jx-yW9"/>
                 <outlet property="desenvolvimentoLabel" destination="SkR-B0-h1R" id="5Ey-K6-V1u"/>
+                <outlet property="mediaLabel" destination="rDv-8a-Ct7" id="Y8E-fX-iq9"/>
                 <outlet property="mediaSlider" destination="Gt3-6Z-u5a" id="bPz-mP-UWI"/>
                 <outlet property="nomesTableView" destination="Pc6-0t-UhU" id="Pxk-qW-nWc"/>
                 <outlet property="suporteLabel" destination="93u-Fw-tgN" id="CAY-eX-mlt"/>
@@ -207,34 +208,43 @@
                             <rect key="frame" x="10" y="10" width="394" height="40"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Colaboradores" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WN0-yS-CBN">
-                                    <rect key="frame" x="20" y="10" width="103.5" height="20"/>
+                                    <rect key="frame" x="10" y="10" width="103.5" height="20"/>
                                     <fontDescription key="fontDescription" name="KohinoorDevanagari-Regular" family="Kohinoor Devanagari" pointSize="16"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Ks-nA-UEM">
-                                    <rect key="frame" x="128.5" y="10" width="9" height="20"/>
-                                    <fontDescription key="fontDescription" name="KohinoorTelugu-Regular" family="Kohinoor Telugu" pointSize="16"/>
+                                    <rect key="frame" x="118.5" y="10" width="10" height="20"/>
+                                    <fontDescription key="fontDescription" name="KohinoorTelugu-Regular" family="Kohinoor Telugu" pointSize="18"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <slider opaque="NO" contentMode="scaleToFill" restorationIdentifier="FirstVC" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="5" translatesAutoresizingMaskIntoConstraints="NO" id="Gt3-6Z-u5a">
-                                    <rect key="frame" x="165.5" y="10" width="210.5" height="21"/>
-                                    <color key="minimumTrackTintColor" red="0.93731445069999997" green="0.5291262269" blue="0.19986191389999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    <rect key="frame" x="151.5" y="10" width="193.5" height="21"/>
+                                    <color key="minimumTrackTintColor" red="0.93725490196078431" green="0.52941176470588236" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </slider>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rDv-8a-Ct7">
+                                    <rect key="frame" x="368" y="10" width="11" height="20"/>
+                                    <fontDescription key="fontDescription" name="KohinoorTelugu-Medium" family="Kohinoor Telugu" pointSize="20"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
                             </subviews>
                             <color key="backgroundColor" red="0.90595823529999997" green="0.90177410840000005" blue="0.91372710469999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             <constraints>
                                 <constraint firstAttribute="bottom" secondItem="4Ks-nA-UEM" secondAttribute="bottom" constant="10" id="7Ie-7b-M4x"/>
+                                <constraint firstItem="rDv-8a-Ct7" firstAttribute="leading" secondItem="Gt3-6Z-u5a" secondAttribute="trailing" constant="25" id="B0F-FR-4PR"/>
+                                <constraint firstItem="rDv-8a-Ct7" firstAttribute="top" secondItem="uH8-P0-BSE" secondAttribute="top" constant="10" id="Bp7-0s-ZVb"/>
                                 <constraint firstItem="4Ks-nA-UEM" firstAttribute="top" secondItem="uH8-P0-BSE" secondAttribute="top" constant="10" id="Bwq-Ux-n6f"/>
-                                <constraint firstItem="Gt3-6Z-u5a" firstAttribute="leading" secondItem="4Ks-nA-UEM" secondAttribute="trailing" constant="30" id="DJ2-KO-QqQ"/>
+                                <constraint firstItem="Gt3-6Z-u5a" firstAttribute="leading" secondItem="4Ks-nA-UEM" secondAttribute="trailing" constant="25" id="DJ2-KO-QqQ"/>
+                                <constraint firstAttribute="trailing" secondItem="rDv-8a-Ct7" secondAttribute="trailing" constant="15" id="I3I-H8-7nE"/>
                                 <constraint firstItem="WN0-yS-CBN" firstAttribute="top" secondItem="uH8-P0-BSE" secondAttribute="top" constant="10" id="isv-Gs-2Mw"/>
                                 <constraint firstItem="Gt3-6Z-u5a" firstAttribute="top" secondItem="uH8-P0-BSE" secondAttribute="top" constant="10" id="n2E-Ry-ct7"/>
                                 <constraint firstAttribute="bottom" secondItem="Gt3-6Z-u5a" secondAttribute="bottom" constant="10" id="pBd-Bw-Amb"/>
                                 <constraint firstAttribute="bottom" secondItem="WN0-yS-CBN" secondAttribute="bottom" constant="10" id="thY-ds-I3h"/>
-                                <constraint firstAttribute="trailing" secondItem="Gt3-6Z-u5a" secondAttribute="trailing" constant="20" id="tsk-AL-OA7"/>
                                 <constraint firstItem="4Ks-nA-UEM" firstAttribute="leading" secondItem="WN0-yS-CBN" secondAttribute="trailing" constant="5" id="x5C-NZ-Uv5"/>
-                                <constraint firstItem="WN0-yS-CBN" firstAttribute="leading" secondItem="uH8-P0-BSE" secondAttribute="leading" constant="20" id="yQy-XE-7YC"/>
+                                <constraint firstItem="WN0-yS-CBN" firstAttribute="leading" secondItem="uH8-P0-BSE" secondAttribute="leading" constant="10" id="yQy-XE-7YC"/>
+                                <constraint firstAttribute="bottom" secondItem="rDv-8a-Ct7" secondAttribute="bottom" constant="10" id="yVl-TJ-qSU"/>
                             </constraints>
                         </view>
                     </subviews>

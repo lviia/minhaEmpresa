@@ -12,6 +12,7 @@
             <connections>
                 <outlet property="cargoPickerView" destination="fXi-ga-sTq" id="USR-bC-Q2n"/>
                 <outlet property="dataNascimentoDatePicker" destination="t29-OK-UkH" id="Tla-sR-6fB"/>
+                <outlet property="nivelLabel" destination="Nyh-xs-SIB" id="g3Y-CG-6HZ"/>
                 <outlet property="nomeTextField" destination="5Ai-6f-1Sw" id="a2s-zg-qxa"/>
                 <outlet property="sobrenomeTextField" destination="a8x-s9-jGS" id="W2X-4d-8hm"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -109,12 +110,18 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="0.0" maxValue="5" translatesAutoresizingMaskIntoConstraints="NO" id="CLW-i7-n48">
-                                            <rect key="frame" x="28" y="25.5" width="338" height="150"/>
+                                            <rect key="frame" x="28" y="25.5" width="338" height="122"/>
                                             <color key="tintColor" red="0.93731445069999997" green="0.5291262269" blue="0.19986191389999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                             <connections>
                                                 <action selector="nivelExperienciaSlider:" destination="-1" eventType="valueChanged" id="eFp-OX-sN3"/>
                                             </connections>
                                         </slider>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1.0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nyh-xs-SIB">
+                                            <rect key="frame" x="185" y="146.5" width="24.5" height="28"/>
+                                            <fontDescription key="fontDescription" name="KohinoorTelugu-Medium" family="Kohinoor Telugu" pointSize="20"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
                                     <constraints>
                                         <constraint firstAttribute="trailing" secondItem="CLW-i7-n48" secondAttribute="trailing" constant="30" id="8ds-oU-0uG"/>

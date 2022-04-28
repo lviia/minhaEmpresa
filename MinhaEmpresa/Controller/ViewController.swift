@@ -25,6 +25,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var admLabel: UILabel!
     @IBOutlet weak var totalColaboradoresLabel: UILabel!
     @IBOutlet weak var mediaSlider: UISlider!
+    @IBOutlet weak var mediaLabel: UILabel!
+    
     
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     var funcionarios:[Funcionario] = []
@@ -163,6 +165,7 @@ extension ViewController: AtualizarFuncionariosDelegate {
             soma += nivelExp
         }
         mediaSlider.value = soma / Float(funcionarios.count)
+        mediaLabel.text = "\(round(mediaSlider.value))"
     }
 
     func cargos() {
@@ -186,11 +189,4 @@ extension ViewController: AtualizarFuncionariosDelegate {
         admLabel.text = "\(somaA)"
     }
 }
-
-//enum Cargos: String {
-//    case com = "Comercial"
-//    case dev = "Desenvolvimento"
-//    case sup = "Suporte Técnico"
-//    case adm = "Administrativo"
-//}
 
