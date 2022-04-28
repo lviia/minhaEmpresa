@@ -47,9 +47,9 @@ class CadastroViewController: UIViewController, UIPickerViewDataSource, UIPicker
         let funcionario = FuncionarioInput(cargo: cargo, dataNascimento: dataNascimento, id: id, nivelExperiencia: nivelExperiencia, nome: nome!, sobrenome: sobrenome!)
 
         if validStr(strId: nome!) == false {
-            Alerta(controller: self).mostra(titulo: "Erro ao salvar nome!", mensagem: "Não insira números ou caracteres especiais")
+            Alerta(controller: self).mostra(titulo: "Campo obrigatório: Nome", mensagem: "Não insira números ou caracteres especiais")
         } else if validStr(strId: sobrenome!) == false {
-            Alerta(controller: self).mostra(titulo: "Erro ao salvar sobrenome!", mensagem: "Não insira números ou caracteres especiais")
+            Alerta(controller: self).mostra(titulo: "Campo obrigatório: Sobrenome", mensagem: "Não insira números ou caracteres especiais!")
         } else {
             atualizarFuncionariosDelegate?.adicionar(funcionario: funcionario)
             atualizarFuncionariosDelegate?.buscarFuncionario()

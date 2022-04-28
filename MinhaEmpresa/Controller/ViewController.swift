@@ -90,6 +90,9 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
         let cell = nomesTableView.dequeueReusableCell(withIdentifier: "FuncionarioCell", for: indexPath) as! FuncionarioTableViewCell
         let funcionario = self.funcionarios[indexPath.row]
         cell.textLabel?.text = (funcionario.nome) + " " +  (funcionario.sobrenome)
+        let longPress = UILongPressGestureRecognizer(target: self, action: #selector(showDetails(_:)))
+        cell.addGestureRecognizer(longPress)
+        
         return cell
     }
     
@@ -115,6 +118,20 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
             nivelExperiencia()
             cargos()
             nomesTableView.reloadData()
+        }
+    }
+    
+    @objc func showDetails(_ gesture: UILongPressGestureRecognizer) {
+        if gesture.state == .began {
+            let cell = gesture.view as! UITableViewCell
+            guard let indexPath = nomesTableView.indexPath(for: cell) else { return }
+            let funcionario = funcionarios[indexPath.row]
+            let nome = funcionario.nome + " " + funcionario.sobrenome
+            let data = funcionario.dataNascimento
+            let cargo = funcionario.cargo
+            let nivel = funcionario.nivelExperiencia
+            Alerta(controller: self).mostra(titulo: "Detalhes", mensagem:
+        "\("Nome: " + nome + "\n" + "Data de Nascimento: " + "\(data)" + "\n" + "Cargo: " + cargo + "\n" + "Nível de experiência: " + "\(nivel)")")
         }
     }
 }
