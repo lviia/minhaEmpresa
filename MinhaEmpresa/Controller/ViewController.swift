@@ -129,7 +129,7 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
             let nome = funcionario.nome + " " + funcionario.sobrenome
             let data = funcionario.dataNascimento
             let cargo = funcionario.cargo
-            let nivel = funcionario.nivelExperiencia
+            let nivel = round(funcionario.nivelExperiencia)
             Alerta(controller: self).mostra(titulo: "Detalhes", mensagem:
         "\("Nome: " + nome + "\n" + "Data de Nascimento: " + "\(data)" + "\n" + "Cargo: " + cargo + "\n" + "Nível de experiência: " + "\(nivel)")")
         }
